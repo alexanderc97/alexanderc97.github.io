@@ -50,7 +50,6 @@ class Ball {
     this.y += this.velY;
   }
 
-  // Change color when balls collide
   collisionDetect() {
     for (const ball of balls) {
       if (this !== ball) {
@@ -65,3 +64,36 @@ class Ball {
     }
   }
 }
+
+// Create 25 balls and store them in an array
+const balls = [];
+
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    random(0 + size, width - size),
+    random(0 + size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size
+  );
+  balls.push(ball);
+}
+
+// Animation loop
+function loop() {
+  // Semi-transparent background creates motion trail effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+    ball.collisionDetect();
+  }
+
+  requestAnimationFrame(loop);
+}
+
+loop();
