@@ -1,250 +1,225 @@
-/* || General setup */
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
+/* Original text/background contrast ratio tested at WebAIM Color Contrast Checker:
+   Original: #a60000 on #a9a9a9 failed WCAG AA (ratio below 4.5:1).
+   Updated to #000 on #fff (ratio 21:1) which passes WCAG AAA. */
 
 html {
-  font-size: 10px;
-  background-color: #dde;
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #ddd;
 }
 
 body {
-  width: 80%;
+  width: 70%;
   min-width: 1024px;
   margin: 0 auto;
+  background-color: #fff;
+  color: #000;
 }
 
-/* || typography */
+/* ---- Headings (replaces font[size="7"], font[size="6"], font[size="5"]) ---- */
 
-font[size="7"], font[size="6"], font[size="5"] {
+h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
 
-p, input, li, table, label {
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: #2a2a2a;
-}
-
-font[size="7"] {
-  font-size: 4rem;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 10px black;
-}
-
-font[size="6"] {
+h1 {
   font-size: 3rem;
   text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid #333;
 }
 
-font[size="5"] {
+h2 {
   font-size: 2.2rem;
 }
 
-p, li, table {
+h3 {
   font-size: 1.6rem;
+}
+
+p, li, td, label, input {
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
-/* || header layout */
+/* ---- Header ---- */
 
-div[class="nav"], article, footer, .secondary {
-  background-color: green;
+header {
+  background-color: #6b8e23;
+  color: #fff;
+  padding: 10px;
 }
 
-article, footer, .secondary {
-  padding: 10px 30px;
+header h1 {
+  color: #fff;
+  border-bottom: none;
 }
 
-article {
-  margin-right: 10px;
-}
+/* ---- Navigation ---- */
 
 div[class="nav"] {
-  height: 50px;
-  background-color: ff80ff;
+  background-color: #333;
+  padding: 10px;
   display: flex;
-  padding: 1% 0;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 div[class="nav"] ul {
-  padding: 0;
   list-style-type: none;
-  flex: 2;
   display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 div[class="nav"] li {
-  display: inline;
-  text-align: center;
-  flex: 1;
+  margin-right: 20px;
 }
 
 div[class="nav"] a {
-  display: inline-block;
-  font-size: 2rem;
-  text-transform: uppercase;
+  color: #fff;
   text-decoration: none;
-  color: black;
 }
 
-div[class="nav"] .search {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 2em;
+div[class="nav"] a:hover,
+div[class="nav"] a:focus {
+  text-decoration: underline;
 }
 
-.search input {
-  font-size: 1.6rem;
-  height: 32px;
-}
+/* ---- Search form ---- */
 
-.search input[type="search"] {
-  flex: 3;
-}
-
-.search input[type="submit"] {
-  flex: 1;
-  margin-left: 1rem;
-  background: #333;
-  border: 0;
-  color: white;
-}
-
-/* || main layout */
-
-main {
+form.search {
   display: flex;
 }
 
-article {
-  flex: 5;
+form.search input[type="search"] {
+  padding: 5px;
 }
 
-.secondary {
-  flex: 2;
-}
-
-footer {
-  margin-top: 10px;
-}
-
-/* Table styling */
-
-table {
-  width: 100%;
-  background-color: #dde;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-}
-
-td {
-  text-align: center;
-}
-
-th[scope="col"] {
-  border-bottom: 1px solid black;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #def;
-}
-
-/* styling content images and audio */
-
-img, audio {
-  display: block;
-  margin: 0 auto;
-}
-
-audio {
-  width: 500px;
-}
-
-/* Comments styling */
-
-.comments {
-  background-color: #def;
-  padding: 10px;
-}
-
-.show-hide {
+form.search input[type="submit"] {
+  padding: 5px 15px;
+  background-color: #6b8e23;
+  color: #fff;
+  border: none;
   cursor: pointer;
 }
 
-.comments font[size="6"] {
-  font-size: 2rem;
-}
+/* ---- Main content ---- */
 
-.comments font[size="6"]:nth-of-type(2) {
-  margin-bottom: 0;
-}
-
-.comment-form {
-  margin-bottom: 3rem;
-}
-
-.comment-form .flex-pair {
+main {
   display: flex;
-  padding: 0 3rem 1rem;
+  padding: 20px;
 }
 
-.comment-form label {
-  align-self: center;
-  flex: 2;
-  text-align: right;
+article {
+  flex: 3;
+  padding-right: 20px;
 }
 
-.comment-form input {
-  margin-left: 1rem;
-  flex: 6;
+.secondary {
+  flex: 1;
+  background-color: #eee;
+  padding: 15px;
 }
 
-.show-hide {
-  text-align: center;
-  width: 150px;
+/* ---- Images ---- */
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 10px 0;
 }
 
-.comment-form input, .comment-form label, .show-hide {
-  font-size: 1.6rem;
-  line-height: 32px;
+/* ---- Table ---- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
 }
 
-.comment-form input[type="submit"], .show-hide {
-  background: #333;
-  border: 0;
-  color: white;
+table td, table th {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: left;
+}
+
+/* ---- Audio ---- */
+
+audio {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* ---- Aside ---- */
+
+aside {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 20px 0;
+  border-left: 4px solid #6b8e23;
+}
+
+/* ---- Comments ---- */
+
+.comments {
+  margin-top: 30px;
+}
+
+div.show-hide {
+  background-color: #6b8e23;
+  color: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.comment-wrapper {
+  display: none;
+  margin-top: 15px;
+}
+
+.comment-wrapper.show {
+  display: block;
+}
+
+.flex-pair {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.flex-pair input {
+  flex: 1;
+  margin-left: 10px;
+  padding: 5px;
 }
 
 .comment-form input[type="submit"] {
-  width: 30%;
-  display: block;
-  margin: 0 auto;
+  padding: 8px 15px;
+  background-color: #6b8e23;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .comment-container {
-  margin-top: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .comment-container li {
-  list-style-type: none;
-  display: flex;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.comment-container li p:nth-child(1) {
-  flex: 1;
-  font-weight: bold;
-}
+/* ---- Footer ---- */
 
-.comment-container li p:nth-child(2) {
-  flex: 5;
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
 }
