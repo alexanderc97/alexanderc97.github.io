@@ -51,8 +51,6 @@ header h1 {
   border-bottom: none;
 }
 
-/* ---- Navigation (updated from div[class="nav"] to nav) ---- */
-
 nav {
   background-color: #333;
   padding: 10px;
@@ -126,10 +124,22 @@ table {
   margin: 20px 0;
 }
 
+table caption {
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  caption-side: top;
+}
+
 table td, table th {
   border: 1px solid #333;
   padding: 8px;
   text-align: left;
+}
+
+table th {
+  background-color: #6b8e23;
+  color: #fff;
 }
 
 audio {
@@ -149,12 +159,22 @@ aside {
   margin-top: 30px;
 }
 
-div.show-hide {
+/* ---- Show/hide button (updated from div.show-hide to button.show-hide) ---- */
+
+button.show-hide {
   background-color: #6b8e23;
   color: #fff;
   padding: 10px 20px;
   display: inline-block;
+  border: none;
   cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+}
+
+button.show-hide:focus,
+button.show-hide:hover {
+  outline: 3px solid #2a2a2a;
 }
 
 .comment-wrapper {
