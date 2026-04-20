@@ -15,8 +15,6 @@ body {
   color: #000;
 }
 
-/* ---- Headings (replaces font[size="7"], font[size="6"], font[size="5"]) ---- */
-
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
@@ -42,8 +40,6 @@ p, li, td, label, input {
   line-height: 1.5;
 }
 
-/* ---- Header ---- */
-
 header {
   background-color: #6b8e23;
   color: #fff;
@@ -55,9 +51,9 @@ header h1 {
   border-bottom: none;
 }
 
-/* ---- Navigation ---- */
+/* ---- Navigation (updated from div[class="nav"] to nav) ---- */
 
-div[class="nav"] {
+nav {
   background-color: #333;
   padding: 10px;
   display: flex;
@@ -65,28 +61,26 @@ div[class="nav"] {
   align-items: center;
 }
 
-div[class="nav"] ul {
+nav ul {
   list-style-type: none;
   display: flex;
   padding: 0;
   margin: 0;
 }
 
-div[class="nav"] li {
+nav li {
   margin-right: 20px;
 }
 
-div[class="nav"] a {
+nav a {
   color: #fff;
   text-decoration: none;
 }
 
-div[class="nav"] a:hover,
-div[class="nav"] a:focus {
+nav a:hover,
+nav a:focus {
   text-decoration: underline;
 }
-
-/* ---- Search form ---- */
 
 form.search {
   display: flex;
@@ -104,8 +98,6 @@ form.search input[type="submit"] {
   cursor: pointer;
 }
 
-/* ---- Main content ---- */
-
 main {
   display: flex;
   padding: 20px;
@@ -122,15 +114,11 @@ article {
   padding: 15px;
 }
 
-/* ---- Images ---- */
-
 img {
   max-width: 100%;
   display: block;
   margin: 10px 0;
 }
-
-/* ---- Table ---- */
 
 table {
   border-collapse: collapse;
@@ -144,15 +132,11 @@ table td, table th {
   text-align: left;
 }
 
-/* ---- Audio ---- */
-
 audio {
   display: block;
   margin: 20px 0;
   width: 100%;
 }
-
-/* ---- Aside ---- */
 
 aside {
   background-color: #f0f0f0;
@@ -160,8 +144,6 @@ aside {
   margin: 20px 0;
   border-left: 4px solid #6b8e23;
 }
-
-/* ---- Comments ---- */
 
 .comments {
   margin-top: 30px;
@@ -190,9 +172,13 @@ div.show-hide {
   margin-bottom: 10px;
 }
 
+.flex-pair label {
+  margin-right: 10px;
+  min-width: 120px;
+}
+
 .flex-pair input {
   flex: 1;
-  margin-left: 10px;
   padding: 5px;
 }
 
@@ -214,8 +200,6 @@ div.show-hide {
   padding: 10px;
   margin-bottom: 10px;
 }
-
-/* ---- Footer ---- */
 
 footer {
   background-color: #333;
